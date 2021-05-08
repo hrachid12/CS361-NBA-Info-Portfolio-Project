@@ -1,0 +1,9 @@
+.team_div {
+	width: 75%;
+	height: 500px;
+	margin: 0 auto;
+	border: 3px dashed black;
+	text-align: center;
+	line-height: 100px;
+    margin-top: 2rem;
+}
