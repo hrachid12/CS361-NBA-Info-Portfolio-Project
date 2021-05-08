@@ -3,17 +3,21 @@
     margin: 0 auto;
 }
 
-.team_div {
-	width: 100%;
+.players_div {
+	width: 30rem;
+    margin: 0 auto;
 	height: 500px;
-	margin: 0 auto;
 	border: 3px dashed black;
-	text-align: center;
-	line-height: 100px;
+	text-align: start;
     margin-top: 2rem;
 }
 
-.player_msg {
+.active_player_msg {
     width: 25rem;
     text-align: start;
+}
+
+.player_list {
+    list-style-type: none;
+    margin-top: 1rem;
 }
