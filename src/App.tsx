@@ -1,15 +1,11 @@
-import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Players from './pages/Players';
-import MainHeader from './components/MainHeader';
+import MainHeader from './components/UI/MainHeader';
 import PlayerDetails from './pages/PlayerDetails';
-// import NavigationBar from './components/Navbar/Navbar';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-const App = () => {
+function App() {
 	return (
 		<div className="App">
 			<MainHeader />
@@ -17,12 +13,12 @@ const App = () => {
 			<main>
 				<Switch>
 					<Route path="/" exact>
-						<Redirect to='/home' />
+						<Redirect to="/home" />
 					</Route>
 
-          <Route path='/home'>
-            <Home />
-          </Route>
+					<Route path="/home">
+						<Home />
+					</Route>
 
 					<Route path="/players" exact>
 						<Players />
@@ -35,6 +31,6 @@ const App = () => {
 			</main>
 		</div>
 	);
-};
+}
 
 export default App;
