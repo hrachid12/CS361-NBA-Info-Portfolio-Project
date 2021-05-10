@@ -1,8 +1,26 @@
 .stats_div {
 	width: 30rem;
-    margin: 0 auto;
 	height: 500px;
 	border: 3px dashed black;
 	text-align: start;
-    margin-top: 2rem;
+}
+
+.outer {
+	margin-top: 4rem;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.empty_div {
+	width: 16rem;
+}
+
+.image_div {
+	overflow: hidden;
+}
+
+.content {
+	padding: 2rem;
+	margin-right: 18rem;
 }

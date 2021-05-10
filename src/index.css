@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  background: #e0e9f5;
+  background: #f0f4f9;
 }
 
 main {
@@ -20,7 +20,10 @@ main {
 
 h1,
 h2,
-h3,
-p {
+h3{
   color: #042b5f;
+}
+
+p {
+  color: #D00000;
 }
