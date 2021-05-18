@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Players from './pages/Players';
 import MainHeader from './components/UI/MainHeader';
 import PlayerDetails from './pages/PlayerDetails';
+import TeamDetails from './pages/TeamDetails';
 
 function App() {
 	return (
@@ -26,6 +27,10 @@ function App() {
 
 					<Route path="/players/:player_id" exact>
 						<PlayerDetails />
+					</Route>
+
+					<Route path="/teams/:team_name" exact>
+						<TeamDetails />
 					</Route>
 				</Switch>
 			</main>
