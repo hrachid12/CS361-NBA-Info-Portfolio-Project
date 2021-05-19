@@ -6,9 +6,14 @@ import styles from './PlayerList.module.css';
 const PlayerList: React.FC<{ players: string[] }> = (props) => {
 	return (
 		<div className={styles.players_div}>
-			<ul className={styles.player_list}>
-				{props.players.map((player) => <PlayerListItem key={player} player={player} />)}
-			</ul>
+			<table className={styles.player_list}>
+				<tbody>
+					<tr>
+						<td>Players</td>
+					</tr>
+					{props.players.map((player) => <PlayerListItem key={player} player={player} />)}
+				</tbody>
+			</table>
 		</div>
 	);
 };

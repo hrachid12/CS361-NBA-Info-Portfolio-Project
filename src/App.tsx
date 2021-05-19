@@ -11,40 +11,40 @@ import TeamDetails from './pages/TeamDetails';
 import GenerateTeam from './requests/GenerateTeam';
 import Team from './models/Team';
 
-const nba_teams = ['New York Knicks'];
+// const nba_teams = ['New York Knicks'];
 
-// const nba_teams = [
-//     'Boston Celtics',
-//     'Brooklyn Nets',
-//     'New York Knicks',
-//     'Philadelphia 76ers',
-//     'Toronto Raptors',
-//     'Chicago Bulls',
-//     'Cleveland Cavaliers',
-//     'Detroit Pistons',
-//     'Indiana Pacers',
-//     'Milwaukee Bucks',
-//     'Atlanta Hawks',
-//     'Charlotte Hornets',
-//     'Miami Heat',
-//     'Orlando Magic',
-//     'Washington Wizards',
-//     'Denver Nuggets',
-//     'Minnesota Timberwolves',
-//     'Oklahoma City Thunder',
-//     'Portland Trail Blazers',
-//     'Utah Jazz',
-//     'Golden State Warriors',
-//     'Los Angeles Clippers',
-//     'Los Angeles Lakers',
-//     'Phoenix Suns',
-//     'Sacramento Kings',
-//     'Dallas Mavericks',
-//     'Houston Rockets',
-//     'Memphis Grizzlies',
-//     'New Orleans Pelicans',
-//     'San Antonio Spurs'
-// ];
+const nba_teams = [
+    'Boston Celtics',
+    'Brooklyn Nets',
+    'New York Knicks',
+    'Philadelphia 76ers',
+    'Toronto Raptors',
+    'Chicago Bulls',
+    'Cleveland Cavaliers',
+    'Detroit Pistons',
+    'Indiana Pacers',
+    'Milwaukee Bucks',
+    'Atlanta Hawks',
+    'Charlotte Hornets',
+    'Miami Heat',
+    'Orlando Magic',
+    'Washington Wizards',
+    'Denver Nuggets',
+    'Minnesota Timberwolves',
+    'Oklahoma City Thunder',
+    'Portland Trail Blazers',
+    'Utah Jazz',
+    'Golden State Warriors',
+    'Los Angeles Clippers',
+    'Los Angeles Lakers',
+    'Phoenix Suns',
+    'Sacramento Kings',
+    'Dallas Mavericks',
+    'Houston Rockets',
+    'Memphis Grizzlies',
+    'New Orleans Pelicans',
+    'San Antonio Spurs'
+];
 
 function App() {
 	const [teams, setTeams] = useState<Team[]>([]);

@@ -13,7 +13,9 @@ interface img_req {
 interface stats_req {
     "NBA": [string[]],
 	"NBA[edit]": [string[]],
-    "Regular season": [string[]]
+    "Regular season": [string[]],
+	"Regular season[edit]": [string[]],
+	"EuroLeague[edit]": [string[]]
 }
 
 const GeneratePlayer = async (player_name: string) => {
@@ -28,14 +30,36 @@ const GeneratePlayer = async (player_name: string) => {
 
     let stats: [string[]];
     try {
-		stats = stats_list['NBA']
+		stats = [...stats_list['NBA']];
 	} catch (error) {
 		try {
-			stats = stats_list['NBA[edit]'];
+			stats = [...stats_list['NBA[edit]']];
 		} catch (error) {
-			stats = stats_list['Regular season'];
+			try {
+				stats = [...stats_list['Regular season']];
+			} catch (error) {
+				try {
+					stats = [...stats_list['Regular season[edit]']];
+				} catch (error) {
+					 try {
+						 stats = [...stats_list['EuroLeague[edit]']];
+					} catch (error) {
+						stats = [['']];
+					}
+				}
+			}
 		}
 	}
+
+	stats.forEach( item => {
+		if (parseInt(item[1])) {
+			item.splice(1, 0, '-');
+		} else if (item[0] === 'Career' || item[0] === 'All-Star') {
+			item.splice(3, 0, '-');
+		}
+	});
+
+	console.log(stats);
 
     return new Player(image.images, player_name, stats, text.Intro);
 };

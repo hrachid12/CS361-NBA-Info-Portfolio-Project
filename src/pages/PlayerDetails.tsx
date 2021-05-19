@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Card from '../components/UI/Card';
 import PlayerImage from '../components/Players/PlayerImage';
 import Player from '../models/Player';
+import PlayerStats from '../components/Players/PlayerStats';
 import GeneratePlayer from '../requests/GeneratePlayer';
 
 import styles from './PlayerDetails.module.css';
@@ -28,7 +29,7 @@ const PlayerDetails: React.FC = (props) => {
 	return (
 		<React.Fragment>
 			{player.name === '' && <p>Loading...</p>}
-			{player.name !== '' && (
+			{player.name !== '' && player.stats !== [ [ '' ] ] && (
 				<React.Fragment>
 					<div className={styles.outer}>
 						<div className={styles.image_div}>
@@ -42,9 +43,7 @@ const PlayerDetails: React.FC = (props) => {
 								<p>{player.intro}</p>
 							</div>
 							
-							<div className={styles.stats_div}>
-								<p>Placeholder for player stats</p>
-							</div>
+							<PlayerStats player={player} />
 						</Card>
 					</div>
 				</React.Fragment>

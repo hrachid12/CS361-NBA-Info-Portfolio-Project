@@ -26,15 +26,17 @@ const Players: React.FC<{ teams: Team[] }> = (props) => {
 				<Card className={styles.inner_content}>
 					<div className={styles.active_player_msg}>
 						<p>
-							The list of players to the right are all of the current active players in the NBA. You can
+							The list of players below are all of the current active players in the NBA. You can
 							find a player manually, or use the search bar to filter the list of players. Clicking on a
 							player's name will direct you to a page with their statistics
 						</p>
 					</div>
 
+					<br />
+
 					<form className={styles.search_filter}>
 						<div>
-							<label>Search</label>
+							{/* <label>Search</label> */}
 							<input type="text" value={searchFilter} onChange={searchChangeHandler} />
 						</div>
 					</form>

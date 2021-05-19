@@ -1,12 +1,51 @@
 .players_div {
-	width: 30rem;
     margin: 0 auto;
-	border: 3px dashed black;
-	text-align: start;
+    line-height: 1.5rem;
+	text-align: center;
     margin-top: 2rem;
 }
 
 .player_list {
-    list-style-type: none;
+    margin: 0 auto;
     margin-top: 1rem;
+    width: 15rem;
+}
+
+.player_list td {
+    padding: 0.5rem;
+}
+
+.player_list tr {
+    border: 1px solid black;
+}
+
+.player_list tr:nth-child(even) {
+	background-color: #f0f4f9;
+}
+
+.player_list tr:nth-child(odd) {
+	background-color: white;
+}
+
+.player_list tr:first-child {
+	border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+.player_list tr:first-child:hover {
+	background-color: white;
+}
+
+.player_list tr:hover {
+	background-color: #FFBA08;
+    text-decoration: none;
+}
+
+.player_list a {
+    padding: 1rem;
+    color: #B00000;
+}
+
+.player_list a:hover {
+    text-decoration: none;
 }

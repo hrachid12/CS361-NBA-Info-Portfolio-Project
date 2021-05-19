@@ -1,17 +1,12 @@
 import React from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import Card from '../components/UI/Card';
-import PlayerListItem from '../components/Players/PlayerListItem';
+import PlayerList from '../components/Players/PlayerList';
 import Team from '../models/Team';
 
 import styles from './TeamDetails.module.css';
 
-// interface RouteParams {
-// 	team_name: string
-// }
-
 const TeamDetails: React.FC<{}> = (props) => {
-	// const params = useParams<RouteParams>();
 	let team = useLocation().state as Team;
 
 	return (
@@ -34,18 +29,12 @@ const TeamDetails: React.FC<{}> = (props) => {
 
 						<Card className={styles.content}>
 							<h1>{team.name}</h1>
-							
+
 							<div className={styles.intro}>
 								<p>{team.intro}</p>
 							</div>
 
-							<div className={styles.roster_div}>
-								<ul>
-									{team.players.sort().map((player) => {
-										return <PlayerListItem key={player} player={player} />
-									})}
-								</ul>
-							</div>
+							<PlayerList players={team.players.sort()} />
 						</Card>
 					</div>
 				</React.Fragment>

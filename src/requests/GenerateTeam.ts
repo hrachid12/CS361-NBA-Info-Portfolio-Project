@@ -1,5 +1,6 @@
 import Team from '../models/Team';
-const IMAGE_SCRAPER_URI = 'https://gentle-bastion-22842.herokuapp.com/https://wiki-image-scraper.herokuapp.com/api/images/';
+const IMAGE_SCRAPER_URI =
+	'https://gentle-bastion-22842.herokuapp.com/https://wiki-image-scraper.herokuapp.com/api/images/';
 const TEXT_SCRAPER_URI = 'https://wiki-text-scraper.herokuapp.com/wiki/';
 interface intro_req {
 	Intro: string;
@@ -10,9 +11,9 @@ interface img_req {
 }
 
 interface player_req {
-	'Current roster': [string[]],
-	'Current roster[edit]': [string[]],
-	'Roster[edit]': [string[]]
+	'Current roster': [string[]];
+	'Current roster[edit]': [string[]];
+	'Roster[edit]': [string[]];
 }
 
 const GenerateTeam = async (team_name: string) => {
@@ -28,25 +29,46 @@ const GenerateTeam = async (team_name: string) => {
 	let players: string[];
 	try {
 		players = players_list['Current roster'].map((player) => {
-			return player[2].replace(/\(TW\)/g, '');
+			return player[2]
+				.replace(/\(TW\)/g, '')
+				.replace(/\(C\)/g, '')
+				.replace(/\(DP\)/g, '')
+				.replace(/\(FA\)/g, '')
+				.replace(/\(S\)/g, '')
+				.replace(/\(GL\)/g, '')
+				.replace(/\(L\)/g, '');
 		});
 	} catch (error) {
 		try {
 			players = players_list['Current roster[edit]'].map((player) => {
-				return player[2].replace(/\(TW\)/g, '');
+				return player[2]
+					.replace(/\(TW\)/g, '')
+					.replace(/\(C\)/g, '')
+					.replace(/\(DP\)/g, '')
+					.replace(/\(FA\)/g, '')
+					.replace(/\(S\)/g, '')
+					.replace(/\(GL\)/g, '')
+					.replace(/\(L\)/g, '');
 			});
 		} catch (error) {
 			players = players_list['Roster[edit]'].map((player) => {
-				return player[2].replace(/\(TW\)/g, '');
+				return player[2]
+					.replace(/\(TW\)/g, '')
+					.replace(/\(C\)/g, '')
+					.replace(/\(DP\)/g, '')
+					.replace(/\(FA\)/g, '')
+					.replace(/\(S\)/g, '')
+					.replace(/\(GL\)/g, '')
+					.replace(/\(L\)/g, '');
 			});
 		}
 	}
 	players.shift();
-	players = players.map( player => {
+	players = players.map((player) => {
 		let temp = player.split(',');
 		return temp[1].trim() + ' ' + temp[0].trim();
 	});
-	return new Team( image.images, team_name, text.Intro, players);
+	return new Team(image.images, team_name, text.Intro, players);
 };
 
 export default GenerateTeam;
