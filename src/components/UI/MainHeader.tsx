@@ -14,13 +14,13 @@ const MainHeader = () => {
 					</li>
 
 					<li>
-						<NavLink exact activeClassName={styles.active} to="/teams">
+						<NavLink activeClassName={styles.active} to="/teams">
 							Teams
 						</NavLink>
 					</li>
 
 					<li>
-						<NavLink exact activeClassName={styles.active} to="/players">
+						<NavLink activeClassName={styles.active} to="/players">
 							Players
 						</NavLink>
 					</li>

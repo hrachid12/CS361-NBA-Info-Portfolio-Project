@@ -1,60 +1,25 @@
 import Team from '../models/Team';
-// const IMAGE_SCRAPER_URI = 'https://wiki-image-scraper.herokuapp.com/api/images/';
+const IMAGE_SCRAPER_URI = 'https://gentle-bastion-22842.herokuapp.com/https://wiki-image-scraper.herokuapp.com/api/images/';
 const TEXT_SCRAPER_URI = 'https://wiki-text-scraper.herokuapp.com/wiki/';
-
-// const nba_teams = [
-//     'Boston Celtics',
-//     'Brooklyn Nets',
-//     'New York Knicks',
-//     'Philadelphia 76ers',
-//     'Toronto Raptors',
-//     'Chicago Bulls',
-//     'Cleveland Cavaliers',
-//     'Detroit Pistons',
-//     'Indiana Pacers',
-//     'Milwaukee Bucks',
-//     'Atlanta Hawks',
-//     'Charlotte Hornets',
-//     'Miami Heat',
-//     'Orlando Magic',
-//     'Washington Wizards',
-//     'Denver Nuggets',
-//     'Minnesota Timberwolves',
-//     'Oklahoma City Thunder',
-//     'Portland Trail Blazers',
-//     'Utah Jazz',
-//     'Golden State Warriors',
-//     'Los Angeles Clippers',
-//     'Los Angeles Lakers',
-//     'Phoenix Suns',
-//     'Sacramento Kings',
-//     'Dallas Mavericks',
-//     'Houston Rockets',
-//     'Memphis Grizzlies',
-//     'New Orleans Pelicans',
-//     'San Antonio Spurs'
-// ];
-
-const LOGO = 'https://upload.wikimedia.org/wikipedia/en/thumb/2/25/New_York_Knicks_logo.svg/2560px-New_York_Knicks_logo.svg.png';
-
 interface intro_req {
 	Intro: string;
 }
 
-// interface img_req {
-// 	images: string;
-// }
+interface img_req {
+	images: string;
+}
 
 interface player_req {
-	'Current roster': [string[]];
-	'Current roster[edit]': [string[]];
+	'Current roster': [string[]],
+	'Current roster[edit]': [string[]],
+	'Roster[edit]': [string[]]
 }
 
 const GenerateTeam = async (team_name: string) => {
-	// let image_res = await fetch(IMAGE_SCRAPER_URI + '?title=' + team_name.replace(' ', '_') + '&ct=logo');
-	// let image = (await image_res.json()) as img_req;
+	let image_res = await fetch(IMAGE_SCRAPER_URI + '?title=' + team_name.replace(' ', '_') + '&ct=logo');
+	let image = (await image_res.json()) as img_req;
 
-	let text_res = await fetch(TEXT_SCRAPER_URI + team_name.replaceAll(' ', '_'));
+	let text_res = await fetch(TEXT_SCRAPER_URI + team_name.replaceAll(' ', '_') + '/Intro');
 	let text = (await text_res.json()) as intro_req;
 
 	let player_res = await fetch(TEXT_SCRAPER_URI + team_name.replaceAll(' ', '_') + '/tables');
@@ -63,20 +28,25 @@ const GenerateTeam = async (team_name: string) => {
 	let players: string[];
 	try {
 		players = players_list['Current roster'].map((player) => {
-			return player[2];
+			return player[2].replace(/\(TW\)/g, '');
 		});
-		players.shift();
-		
-        return new Team( LOGO, team_name, text.Intro, players);
-		
 	} catch (error) {
-		players = players_list['Current roster[edit]'].map((player) => {
-			return player[2];
-		});
-		players.shift();
-		
-		return new Team(LOGO, team_name, text.Intro, players);
+		try {
+			players = players_list['Current roster[edit]'].map((player) => {
+				return player[2].replace(/\(TW\)/g, '');
+			});
+		} catch (error) {
+			players = players_list['Roster[edit]'].map((player) => {
+				return player[2].replace(/\(TW\)/g, '');
+			});
+		}
 	}
+	players.shift();
+	players = players.map( player => {
+		let temp = player.split(',');
+		return temp[1].trim() + ' ' + temp[0].trim();
+	});
+	return new Team( image.images, team_name, text.Intro, players);
 };
 
 export default GenerateTeam;

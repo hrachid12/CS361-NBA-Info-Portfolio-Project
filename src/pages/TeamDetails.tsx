@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import Card from '../components/UI/Card';
+import PlayerListItem from '../components/Players/PlayerListItem';
 import Team from '../models/Team';
 
 import styles from './TeamDetails.module.css';
@@ -40,8 +41,8 @@ const TeamDetails: React.FC<{}> = (props) => {
 
 							<div className={styles.stats_div}>
 								<ul>
-									{team.players.map((player) => {
-										return <li key={player}>{player}</li>;
+									{team.players.sort().map((player) => {
+										return <PlayerListItem key={player} player={player} />
 									})}
 								</ul>
 							</div>

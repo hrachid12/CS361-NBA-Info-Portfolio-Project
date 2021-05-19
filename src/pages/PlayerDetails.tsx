@@ -15,8 +15,6 @@ const PlayerDetails: React.FC = (props) => {
 	const params = useParams<RouteParams>();
 	let data = useLocation().state as Player;
 
-	console.log(params['player_id']);
-	console.log(data.image);
 	return (
 		<React.Fragment>
 			<h1>Player Details</h1>
@@ -27,7 +25,7 @@ const PlayerDetails: React.FC = (props) => {
 				</div>
 
 				<Card className={styles.content}>
-					<p>Player {params['player_id']}</p>
+					<p>{params['player_id']}</p>
 					<div className={styles.stats_div}>
 						<p>Placeholder for player stats</p>
 					</div>

@@ -14,7 +14,7 @@ const TeamListItem: React.FC<{ team: Team }> = (props) => {
 		>
 			{' '}
 			<Card border="secondary" bg="light" className={styles.card_bg}>
-				<Card.Img variant="top" src={props.team.image} style={{ width: '16rem' }} />
+				<Card.Img variant="top" src={props.team.image} className={styles.card_img_top} />
 				<Card.Footer>
 					<Card.Title className={styles.red_title} >{props.team.name}</Card.Title>
 				</Card.Footer>

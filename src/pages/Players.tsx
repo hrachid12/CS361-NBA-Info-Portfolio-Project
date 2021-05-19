@@ -2,7 +2,7 @@ import React from 'react';
 import PlayerList from '../components/Players/PlayerList';
 import Card from '../components/UI/Card';
 
-import Player from '../models/Player';
+// import Player from '../models/Player';
 import Team from '../models/Team';
 import styles from './Players.module.css';
 
@@ -14,6 +14,7 @@ const Players: React.FC<{ teams: Team[] }> = (props) => {
 			players.push(player);
 		});
 	});
+	players.sort();
 
 	return (
 		<React.Fragment>

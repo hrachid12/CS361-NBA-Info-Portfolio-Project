@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import Player from '../../models/Player';
+// import Player from '../../models/Player';
 
 const PlayerListItem: React.FC<{ player: string }> = (props) => {
 	return (
@@ -8,7 +8,7 @@ const PlayerListItem: React.FC<{ player: string }> = (props) => {
 			<Link to={{
                 pathname: `/players/${props.player}`,
                 state: props.player
-            }}>Player ID: {props.player}</Link>
+            }}>{props.player}</Link>
 		</li>
 	);
 };
