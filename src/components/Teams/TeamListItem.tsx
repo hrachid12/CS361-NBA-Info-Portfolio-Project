@@ -8,7 +8,7 @@ const TeamListItem: React.FC<{ team: Team }> = (props) => {
 	return (
 		<Link
 			to={{
-				pathname: `/teams/${props.team.name}`,
+				pathname: `/teams/${props.team.name.replaceAll(' ', '_')}`,
 				state: props.team
 			}}
 		>

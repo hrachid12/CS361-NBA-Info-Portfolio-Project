@@ -3,17 +3,17 @@ import PlayerList from '../components/Players/PlayerList';
 import Card from '../components/UI/Card';
 
 import Player from '../models/Player';
+import Team from '../models/Team';
 import styles from './Players.module.css';
 
-const Players = () => {
-	const PLACEHOLDER_PLAYERS = [
-		new Player('https://upload.wikimedia.org/wikipedia/commons/c/cf/LeBron_James_crop.jpg'),
-		new Player('https://upload.wikimedia.org/wikipedia/commons/1/17/Julius_Randle_with_Lakers.jpg'),
-		new Player('https://upload.wikimedia.org/wikipedia/commons/e/e9/RJ_Barrett_Knicks_%28cropped%29.jpg'),
-		new Player(
-			'https://upload.wikimedia.org/wikipedia/commons/e/eb/Brian_Scalabrine_of_the_Boston_Celtics_at_NBA_Media_Day_2007.png'
-		)
-	];
+const Players: React.FC<{ teams: Team[] }> = (props) => {
+
+	let players: string[] = [];
+	props.teams.forEach( team => {
+		team.players.forEach( player => {
+			players.push(player);
+		});
+	});
 
 	return (
 		<React.Fragment>
@@ -29,7 +29,7 @@ const Players = () => {
 				<Card className={styles.inner_content}>
 					<input type="text" />
 
-					<PlayerList players={PLACEHOLDER_PLAYERS} />
+					<PlayerList players={players} />
 				</Card>
 			</div>
 		</React.Fragment>
