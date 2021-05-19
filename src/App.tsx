@@ -84,7 +84,7 @@ function App() {
 						<Players teams={teams} />
 					</Route>
 
-					<Route path="/players/:player_id" exact>
+					<Route path="/players/:player_name" exact>
 						<PlayerDetails />
 					</Route>
 

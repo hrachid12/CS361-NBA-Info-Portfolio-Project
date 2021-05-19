@@ -19,8 +19,6 @@ const TeamDetails: React.FC<{}> = (props) => {
 			{team === undefined && <Redirect to="/teams" exact />}
 			{team !== undefined && (
 				<React.Fragment>
-					<h1>{team.name}</h1>
-
 					<div className={styles.outer}>
 						<div className={styles.image_div}>
 							<img src={team.image} alt="Team logo" className={styles.team_img} />
@@ -35,11 +33,13 @@ const TeamDetails: React.FC<{}> = (props) => {
 						</div>
 
 						<Card className={styles.content}>
+							<h1>{team.name}</h1>
+							
 							<div className={styles.intro}>
 								<p>{team.intro}</p>
 							</div>
 
-							<div className={styles.stats_div}>
+							<div className={styles.roster_div}>
 								<ul>
 									{team.players.sort().map((player) => {
 										return <PlayerListItem key={player} player={player} />

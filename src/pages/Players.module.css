@@ -1,21 +1,21 @@
 .players_div {
 	width: 30rem;
-    margin: 0 auto;
+	margin: 0 auto;
 	height: 500px;
 	border: 3px dashed black;
 	text-align: start;
-    margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 .active_player_msg {
-    width: 25rem;
-    text-align: start;
-    margin-right: 2rem;
+	width: 25rem;
+	text-align: start;
+	margin-right: 2rem;
 }
 
 .player_list {
-    list-style-type: none;
-    margin-top: 1rem;
+	list-style-type: none;
+	margin-top: 1rem;
 }
 
 .outer {
@@ -26,6 +26,21 @@
 }
 
 .inner_content {
-    padding: 2rem;
-    margin-right: 27rem;
+	padding: 2rem;
+	/* margin-right: 27rem; */
+}
+
+.search_filter label {
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-right: 1rem;
+}
+
+.search_filter input {
+	font: inherit;
+	padding: 0.5rem;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	width: 20rem;
+	max-width: 100%;
 }
