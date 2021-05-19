@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayerListItem from '../components/Players/PlayerListItem';
+import PlayerList from '../components/Players/PlayerList';
 import Card from '../components/UI/Card';
 
 import Player from '../models/Player';
@@ -17,8 +17,6 @@ const Players = () => {
 
 	return (
 		<React.Fragment>
-			<h1>Players page</h1>
-
 			<div className={styles.outer}>
 				<div className={styles.active_player_msg}>
 					<p>
@@ -31,11 +29,7 @@ const Players = () => {
 				<Card className={styles.inner_content}>
 					<input type="text" />
 
-					<div className={styles.players_div}>
-						<ul className={styles.player_list}>
-							{PLACEHOLDER_PLAYERS.map((player) => <PlayerListItem key={player.id} player={player} />)}
-						</ul>
-					</div>
+					<PlayerList players={PLACEHOLDER_PLAYERS} />
 				</Card>
 			</div>
 		</React.Fragment>

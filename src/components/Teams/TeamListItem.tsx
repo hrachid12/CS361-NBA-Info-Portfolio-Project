@@ -1,7 +1,8 @@
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Team from '../../models/Team';
-// import styles from './TeamListItem.module.css';
+
+import styles from './TeamListItem.module.css';
 
 const TeamListItem: React.FC<{ team: Team }> = (props) => {
 	return (
@@ -12,10 +13,10 @@ const TeamListItem: React.FC<{ team: Team }> = (props) => {
 			}}
 		>
 			{' '}
-			<Card border="secondary" bg="light" style={{ width: '20rem' }}>
+			<Card border="secondary" bg="light" className={styles.card_bg}>
 				<Card.Img variant="top" src={props.team.image} style={{ width: '16rem' }} />
 				<Card.Footer>
-					<Card.Title >{props.team.name}</Card.Title>
+					<Card.Title className={styles.red_title} >{props.team.name}</Card.Title>
 				</Card.Footer>
 			</Card>
 		</Link>

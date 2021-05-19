@@ -6,7 +6,7 @@ import Team from '../../models/Team';
 const TeamList: React.FC<{ teams: Team[] }> = (props) => {
     return (
         <CardColumns>
-            {props.teams.map( team => <TeamListItem team={team} />)}
+            {props.teams.map( team => <TeamListItem key={team.id} team={team} />)}
         </CardColumns>
     );
 }

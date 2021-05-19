@@ -1,0 +1,42 @@
+.stats_div {
+	width: 30rem;
+	height: 500px;
+	border: 3px dashed black;
+	text-align: start;
+}
+
+.outer {
+	margin-top: 4rem;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.empty_div {
+	width: 16rem;
+}
+
+.content {
+	padding: 2rem;
+	margin-right: 18rem;
+}
+
+.image_div {
+	overflow: hidden;
+}
+
+.team_img {
+    width: 250px;
+    height: auto;
+    margin-right: 2rem;
+    border-radius: 5px;
+}
+
+.active_player_msg {
+    margin-top: 3rem;
+    width: 250px;
+}
+
+.intro {
+	width: 30rem;
+}
