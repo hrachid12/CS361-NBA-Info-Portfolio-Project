@@ -1,5 +1,4 @@
-// const TRANSLATION_URI = 'https://chrome-octane-313320.uc.r.appspot.com/';
-const TRANSLATION_URI = 'http://localhost:8080/';
+const TRANSLATION_URI = 'https://chrome-octane-313320.uc.r.appspot.com/';
 
 interface trans_res {
     "translated": string,
