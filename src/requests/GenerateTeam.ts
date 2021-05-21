@@ -1,4 +1,6 @@
 import Team from '../models/Team';
+import Translate from './Translate';
+
 const IMAGE_SCRAPER_URI =
 	'https://gentle-bastion-22842.herokuapp.com/https://wiki-image-scraper.herokuapp.com/api/images/';
 const TEXT_SCRAPER_URI = 'https://wiki-text-scraper.herokuapp.com/wiki/';
@@ -17,14 +19,17 @@ interface player_req {
 }
 
 const GenerateTeam = async (team_name: string) => {
-	let image_res = await fetch(IMAGE_SCRAPER_URI + '?title=' + team_name.replace(' ', '_') + '&ct=logo');
-	let image = (await image_res.json()) as img_req;
+	const image_res = await fetch(IMAGE_SCRAPER_URI + '?title=' + team_name.replace(' ', '_') + '&ct=logo');
+	const image = (await image_res.json()) as img_req;
 
-	let text_res = await fetch(TEXT_SCRAPER_URI + team_name.replaceAll(' ', '_') + '/Intro');
-	let text = (await text_res.json()) as intro_req;
+	const text_res = await fetch(TEXT_SCRAPER_URI + team_name.replaceAll(' ', '_') + '/Intro');
+	const text = (await text_res.json()) as intro_req;
 
-	let player_res = await fetch(TEXT_SCRAPER_URI + team_name.replaceAll(' ', '_') + '/tables');
-	let players_list = (await player_res.json()) as player_req;
+	const spanish = await Translate(text.Intro, 'en', 'es');
+	const french = await Translate(text.Intro, 'en', 'fr');
+
+	const player_res = await fetch(TEXT_SCRAPER_URI + team_name.replaceAll(' ', '_') + '/tables');
+	const players_list = (await player_res.json()) as player_req;
 
 	let players: string[];
 	try {
@@ -68,7 +73,7 @@ const GenerateTeam = async (team_name: string) => {
 		let temp = player.split(',');
 		return temp[1].trim() + ' ' + temp[0].trim();
 	});
-	return new Team(image.images, team_name, text.Intro, players);
+	return new Team(image.images, team_name, text.Intro, spanish, french, players);
 };
 
 export default GenerateTeam;

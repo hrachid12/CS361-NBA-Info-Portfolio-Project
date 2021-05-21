@@ -9,6 +9,8 @@ import styles from './TeamDetails.module.css';
 const TeamDetails: React.FC<{}> = (props) => {
 	let team = useLocation().state as Team;
 
+	console.log(team);
+
 	return (
 		<React.Fragment>
 			{team === undefined && <Redirect to="/teams" exact />}
@@ -31,7 +33,7 @@ const TeamDetails: React.FC<{}> = (props) => {
 							<h1>{team.name}</h1>
 
 							<div className={styles.intro}>
-								<p>{team.intro}</p>
+								<p>{team.french}</p>
 							</div>
 
 							<PlayerList players={team.players.sort()} />

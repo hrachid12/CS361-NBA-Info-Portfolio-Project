@@ -9,6 +9,11 @@
     padding: 0.2rem;
 }
 
+.stats_table td:hover {
+    background-color: #b00000;
+    color: white;
+}
+
 .stats_table tr:nth-child(even) {
 	background-color: #f0f4f9;
 }

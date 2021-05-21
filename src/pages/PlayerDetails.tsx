@@ -15,7 +15,7 @@ interface RouteParams {
 
 const PlayerDetails: React.FC = (props) => {
 	const params = useParams<RouteParams>();
-	const [ player, setPlayer ] = useState<Player>(new Player('', '', [ [ '' ] ], ''));
+	const [ player, setPlayer ] = useState<Player>(new Player('', '', [ [ '' ] ], '', '', ''));
 
 	useEffect(
 		() => {
@@ -28,7 +28,7 @@ const PlayerDetails: React.FC = (props) => {
 
 	return (
 		<React.Fragment>
-			{player.name === '' && <p>Loading...</p>}
+			{player.name === '' && <Card className={styles.loading}><p>Loading...</p></Card>}
 			{player.name !== '' && player.stats !== [ [ '' ] ] && (
 				<React.Fragment>
 					<div className={styles.outer}>
@@ -40,7 +40,7 @@ const PlayerDetails: React.FC = (props) => {
 							<h1>{player.name}</h1>
 
 							<div className={styles.intro}>
-								<p>{player.intro}</p>
+								<p>{player.english}</p>
 							</div>
 							
 							<PlayerStats player={player} />
