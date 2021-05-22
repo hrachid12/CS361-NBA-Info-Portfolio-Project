@@ -1,17 +1,21 @@
+import { useContext } from 'react';
+
+import { LanguageContext } from '../store/language-context';
+
 import Card from '../components/UI/Card';
 import styles from './Home.module.css';
 
-const Home: React.FC<{}> = (props) => {
+import { HOME_MSG } from '../CONSTANTS';
+
+const Home: React.FC<{}> = () => {
+	const langCxt = useContext(LanguageContext);
+
 	return (
 		<Card className={styles.main_div}>
 			<div className={styles.player_msg}>
-				<p>
-					Welcome to NBA Info! You can find descriptions and statistics on all thirty teams and
-                    all active players in the NBA! You can begin by either naviagting to the team page to 
-					get information on a team's roster and a brief history, or you can navigate to the player
-					page where you can find an entire list of active NBA players. Then, on either page, you can
-					click on a player's name to see their season stats.
-				</p>
+				{langCxt.language === 'english' && <p>{HOME_MSG.english}</p>}
+				{langCxt.language === 'spanish' && <p>{HOME_MSG.spanish}</p>}
+				{langCxt.language === 'french' && <p>{HOME_MSG.french}</p>}
 			</div>
 		</Card>
 	);

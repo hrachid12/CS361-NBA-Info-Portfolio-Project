@@ -1,95 +1,64 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Players from './pages/Players';
-import Teams from './pages/Teams';
 import MainHeader from './components/UI/MainHeader';
+import Players from './pages/Players';
 import PlayerDetails from './pages/PlayerDetails';
+import Teams from './pages/Teams';
 import TeamDetails from './pages/TeamDetails';
 
-import GenerateTeam from './requests/GenerateTeam';
 import Team from './models/Team';
+import GenerateTeam from './requests/GenerateTeam';
 
-const nba_teams = ['Toronto Raptors'];
+import LanguageContextProvider from './store/language-context';
+import PlayerContextProvider from './store/player-context';
 
-// const nba_teams = [
-//     'Boston Celtics',
-//     'Brooklyn Nets',
-//     'New York Knicks',
-//     'Philadelphia 76ers',
-//     'Toronto Raptors',
-//     'Chicago Bulls',
-//     'Cleveland Cavaliers',
-//     'Detroit Pistons',
-//     'Indiana Pacers',
-//     'Milwaukee Bucks',
-//     'Atlanta Hawks',
-//     'Charlotte Hornets',
-//     'Miami Heat',
-//     'Orlando Magic',
-//     'Washington Wizards',
-//     'Denver Nuggets',
-//     'Minnesota Timberwolves',
-//     'Oklahoma City Thunder',
-//     'Portland Trail Blazers',
-//     'Utah Jazz',
-//     'Golden State Warriors',
-//     'Los Angeles Clippers',
-//     'Los Angeles Lakers',
-//     'Phoenix Suns',
-//     'Sacramento Kings',
-//     'Dallas Mavericks',
-//     'Houston Rockets',
-//     'Memphis Grizzlies',
-//     'New Orleans Pelicans',
-//     'San Antonio Spurs'
-// ];
+import { NBA_TEAMS } from './CONSTANTS';
 
 function App() {
-	const [teams, setTeams] = useState<Team[]>([]);
-	// const [ language, setLanguage ] = useState('english');
+	const [ teams, setTeams ] = useState<Team[]>([]);
 
-	useEffect(() => {	
-		nba_teams.forEach( async (team_name) => {
+	useEffect(() => {
+		NBA_TEAMS.forEach(async (team_name) => {
 			GenerateTeam(team_name).then((new_team) => {
 				setTeams((prevState) => {
-					return [...prevState, new_team];
+					return [ ...prevState, new_team ];
 				});
 			});
 		});
-	
 	}, []);
 
 	return (
-		<div className="App">
-			<MainHeader />
+		<PlayerContextProvider>
+			<LanguageContextProvider>
+					<MainHeader />
 
-			<main>
-				<Switch>
-					<Route path="/" exact>
-						<Home />
-					</Route>
+					<main>
+						<Switch>
+							<Route path="/" exact>
+								<Home />
+							</Route>
 
-					<Route path="/teams" exact>
-						<Teams teams={teams} />
-					</Route>
+							<Route path="/teams" exact>
+								<Teams teams={teams} />
+							</Route>
 
-					<Route path="/teams/:team_name" exact>
-						<TeamDetails />
-					</Route>
+							<Route path="/teams/:team_name" exact>
+								<TeamDetails />
+							</Route>
 
-					<Route path="/players" exact>
-						<Players teams={teams} />
-					</Route>
+							<Route path="/players" exact>
+								<Players teams={teams} />
+							</Route>
 
-					<Route path="/players/:player_name" exact>
-						<PlayerDetails />
-					</Route>
-
-				</Switch>
-			</main>
-		</div>
+							<Route path="/players/:player_name" exact>
+								<PlayerDetails />
+							</Route>
+						</Switch>
+					</main>
+			</LanguageContextProvider>
+		</PlayerContextProvider>
 	);
 }
 
