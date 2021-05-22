@@ -52,9 +52,9 @@ export const TEAMS_MSG = {
 };
 
 export const PLAYERS_MSG = {
-	english: "The list of players below are all of the current active players in the NBA. You can find a player manually, or use the search bar to filter the list of players. Clicking on a player's name will direct you to a page with their statistics",
-	spanish: "La lista de jugadores a continuación son todos los jugadores activos actuales en la NBA. Puede buscar un jugador manualmente o utilizar la barra de búsqueda para filtrar la lista de jugadores. Al hacer clic en el nombre de un jugador, accederá a una página con sus estadísticas.",
-	french: "La liste des joueurs ci-dessous comprend tous les joueurs actifs actuels de la NBA. Vous pouvez rechercher un joueur manuellement ou utiliser la barre de recherche pour filtrer la liste des joueurs. Cliquer sur le nom d'un joueur vous dirigera vers une page avec ses statistiques."
+	english: "The list of players below are all of the current active players in the NBA. You can find a player manually, or use the search bar to filter the list of players. Clicking on a player's name will direct you to a page with their statistics. If you want more information about a team and its roster, you can navigate to the teams page by using the navigation bar above.",
+	spanish: "La lista de jugadores a continuación son todos los jugadores activos actuales en la NBA. Puede buscar un jugador manualmente o utilizar la barra de búsqueda para filtrar la lista de jugadores. Al hacer clic en el nombre de un jugador, accederá a una página con sus estadísticas. Si desea obtener más información sobre un equipo y su lista, puede navegar a la página de equipos usando la barra de navegación de arriba.",
+	french: "La liste des joueurs ci-dessous comprend tous les joueurs actifs actuels de la NBA. Vous pouvez rechercher un joueur manuellement ou utiliser la barre de recherche pour filtrer la liste des joueurs. Cliquer sur le nom d'un joueur vous dirigera vers une page avec ses statistiques. Si vous souhaitez plus d'informations sur une équipe et sa liste, vous pouvez accéder à la page des équipes en utilisant la barre de navigation ci-dessus."
 }
 
 export const TEAM_DETAILS_MSG = {

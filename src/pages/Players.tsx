@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { LanguageContext } from '../store/language-context';
 
-import PlayerList from '../components/Players/PlayerList';
 import Card from '../components/UI/Card';
+import PlayerList from '../components/Players/PlayerList';
+import SearchFilter from '../components/UI/SearchFilter';
 import Team from '../models/Team';
 
 import { PLAYERS_MSG } from '../CONSTANTS';
@@ -37,11 +38,7 @@ const Players: React.FC<{ teams: Team[] }> = (props) => {
 
 					<br />
 
-					<form className={styles.search_filter}>
-						<div>
-							<input type="text" value={searchFilter} onChange={searchChangeHandler} />
-						</div>
-					</form>
+					<SearchFilter value={searchFilter} onChangeHandler={searchChangeHandler} />
 
 					<PlayerList
 						players={players.filter((el) => el.toLowerCase().search(searchFilter.toLowerCase()) > -1)}

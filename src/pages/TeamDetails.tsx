@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
+
 import Card from '../components/UI/Card';
 import PlayerList from '../components/Players/PlayerList';
 import Team from '../models/Team';
@@ -12,7 +13,6 @@ import { TEAM_DETAILS_MSG } from '../CONSTANTS';
 
 const TeamDetails: React.FC<{}> = () => {
 	let team = useLocation().state as Team;
-
 	const langCtx = useContext(LanguageContext);
 
 	return (
@@ -25,9 +25,9 @@ const TeamDetails: React.FC<{}> = () => {
 							<img src={team.image} alt="Team logo" className={styles.team_img} />
 
 							<div className={styles.active_player_msg}>
-									{langCtx.language === 'english' && <p>{TEAM_DETAILS_MSG.english}</p>}
-									{langCtx.language === 'spanish' && <p>{TEAM_DETAILS_MSG.spanish}</p>}
-									{langCtx.language === 'french' && <p>{TEAM_DETAILS_MSG.french}</p>}
+								{langCtx.language === 'english' && <p>{TEAM_DETAILS_MSG.english}</p>}
+								{langCtx.language === 'spanish' && <p>{TEAM_DETAILS_MSG.spanish}</p>}
+								{langCtx.language === 'french' && <p>{TEAM_DETAILS_MSG.french}</p>}
 							</div>
 						</div>
 
@@ -39,6 +39,8 @@ const TeamDetails: React.FC<{}> = () => {
 								{langCtx.language === 'spanish' && <p>{team.spanish}</p>}
 								{langCtx.language === 'french' && <p>{team.french}</p>}
 							</div>
+
+							<br />
 
 							<PlayerList players={team.players.sort()} />
 						</Card>
