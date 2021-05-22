@@ -1,12 +1,10 @@
-import { useState, useEffect, } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from './pages/Home';
 import MainHeader from './components/UI/MainHeader';
-import Players from './pages/Players';
-import PlayerDetails from './pages/PlayerDetails';
+import LoadingSpinner from './components/UI/LoadingSpinner';
+
 import Teams from './pages/Teams';
-import TeamDetails from './pages/TeamDetails';
 
 import Team from './models/Team';
 import GenerateTeam from './requests/GenerateTeam';
@@ -15,6 +13,11 @@ import LanguageContextProvider from './store/language-context';
 import PlayerContextProvider from './store/player-context';
 
 import { NBA_TEAMS } from './CONSTANTS';
+
+const Players = React.lazy(() => import('./pages/Players'));
+const PlayerDetails = React.lazy(() => import('./pages/PlayerDetails'));
+const TeamDetails = React.lazy(() => import('./pages/TeamDetails'));
+const Home = React.lazy(() => import('./pages/Home'));
 
 function App() {
 	const [ teams, setTeams ] = useState<Team[]>([]);
@@ -32,9 +35,14 @@ function App() {
 	return (
 		<PlayerContextProvider>
 			<LanguageContextProvider>
-					<MainHeader />
+				<MainHeader />
 
-					<main>
+				<main>
+					<Suspense fallback={
+						<div className='centered'>
+							<LoadingSpinner />
+						</div>
+					}>
 						<Switch>
 							<Route path="/" exact>
 								<Home />
@@ -56,7 +64,8 @@ function App() {
 								<PlayerDetails />
 							</Route>
 						</Switch>
-					</main>
+					</Suspense>
+				</main>
 			</LanguageContextProvider>
 		</PlayerContextProvider>
 	);
