@@ -34,18 +34,21 @@
 
 .player_list tr:first-child:hover {
 	background-color: white;
+    color: black;
 }
 
 .player_list tr:hover {
-	background-color: #FFBA08;
+    background-color: #032b43;
+    color: #FFBA08;
     text-decoration: none;
 }
 
 .player_list a {
     padding: 1rem;
-    color: #B00000;
+    color: #032b43;
 }
 
-.player_list a:hover {
+.player_list tr:hover a {
     text-decoration: none;
+    color: #FFBA08;
 }

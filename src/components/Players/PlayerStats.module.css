@@ -10,8 +10,8 @@
 }
 
 .stats_table td:hover {
-    background-color: #b00000;
-    color: white;
+    background-color: #032b43;
+    color: #FFBA08;
 }
 
 .stats_table tr:nth-child(even) {
