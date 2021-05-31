@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 
-// import Player from '../../models/Player';
-
 const PlayerListItem: React.FC<{ player: string }> = (props) => {
 	return (
 		<tr>

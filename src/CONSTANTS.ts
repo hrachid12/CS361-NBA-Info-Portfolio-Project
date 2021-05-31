@@ -52,13 +52,26 @@ export const TEAMS_MSG = {
 };
 
 export const PLAYERS_MSG = {
-	english: "The list of players below are all of the current active players in the NBA. You can find a player manually, or use the search bar to filter the list of players. Clicking on a player's name will direct you to a page with their statistics. If you want more information about a team and its roster, you can navigate to the teams page by using the navigation bar above.",
-	spanish: "La lista de jugadores a continuación son todos los jugadores activos actuales en la NBA. Puede buscar un jugador manualmente o utilizar la barra de búsqueda para filtrar la lista de jugadores. Al hacer clic en el nombre de un jugador, accederá a una página con sus estadísticas. Si desea obtener más información sobre un equipo y su lista, puede navegar a la página de equipos usando la barra de navegación de arriba.",
-	french: "La liste des joueurs ci-dessous comprend tous les joueurs actifs actuels de la NBA. Vous pouvez rechercher un joueur manuellement ou utiliser la barre de recherche pour filtrer la liste des joueurs. Cliquer sur le nom d'un joueur vous dirigera vers une page avec ses statistiques. Si vous souhaitez plus d'informations sur une équipe et sa liste, vous pouvez accéder à la page des équipes en utilisant la barre de navigation ci-dessus."
-}
+	english:
+		"The list of players below are all of the current active players in the NBA. You can find a player manually, or use the search bar to filter the list of players. Clicking on a player's name will direct you to a page with their statistics. If you want more information about a team and its roster, you can navigate to the teams page by using the navigation bar above.",
+	spanish:
+		'La lista de jugadores a continuación son todos los jugadores activos actuales en la NBA. Puede buscar un jugador manualmente o utilizar la barra de búsqueda para filtrar la lista de jugadores. Al hacer clic en el nombre de un jugador, accederá a una página con sus estadísticas. Si desea obtener más información sobre un equipo y su lista, puede navegar a la página de equipos usando la barra de navegación de arriba.',
+	french:
+		"La liste des joueurs ci-dessous comprend tous les joueurs actifs actuels de la NBA. Vous pouvez rechercher un joueur manuellement ou utiliser la barre de recherche pour filtrer la liste des joueurs. Cliquer sur le nom d'un joueur vous dirigera vers une page avec ses statistiques. Si vous souhaitez plus d'informations sur une équipe et sa liste, vous pouvez accéder à la page des équipes en utilisant la barre de navigation ci-dessus."
+};
 
 export const TEAM_DETAILS_MSG = {
-	english: "The players in the roster table are the current active players on the team. Clicking on one of their names will redirect you to a page where you can find their seasonal stats.",
-	spanish: "Los jugadores en la tabla de la lista son los jugadores activos actuales en el equipo. Al hacer clic en uno de sus nombres, se le redirigirá a una página donde podrá encontrar sus estadísticas de temporada.",
-	french: "Les joueurs de la table de composition sont les joueurs actifs actuels de l'équipe. En cliquant sur l'un de leurs noms, vous serez redirigé vers une page où vous pourrez trouver leurs statistiques saisonnières."
-}
+	english:
+		'The players in the roster table are the current active players on the team. Clicking on one of their names will redirect you to a page where you can find their seasonal stats.',
+	spanish:
+		'Los jugadores en la tabla de la lista son los jugadores activos actuales en el equipo. Al hacer clic en uno de sus nombres, se le redirigirá a una página donde podrá encontrar sus estadísticas de temporada.',
+	french:
+		"Les joueurs de la table de composition sont les joueurs actifs actuels de l'équipe. En cliquant sur l'un de leurs noms, vous serez redirigé vers une page où vous pourrez trouver leurs statistiques saisonnières."
+};
+
+export const IMAGE_SCRAPER_URI =
+	'https://gentle-bastion-22842.herokuapp.com/https://wiki-image-scraper.herokuapp.com/api/images/';
+	
+export const TEXT_SCRAPER_URI = 'https://wiki-text-scraper.herokuapp.com/wiki/';
+
+export const TRANSLATION_URI = 'https://chrome-octane-313320.uc.r.appspot.com/';

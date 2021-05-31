@@ -1,7 +1,6 @@
 import CardColumns from 'react-bootstrap/CardColumns';
 import TeamListItem from './TeamListItem';
 import Team from '../../models/Team';
-// import styles from './TeamList.module.css';
 
 const TeamList: React.FC<{ teams: Team[] }> = (props) => {
     return (

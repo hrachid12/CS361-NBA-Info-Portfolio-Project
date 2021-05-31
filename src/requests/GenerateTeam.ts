@@ -1,9 +1,7 @@
 import Team from '../models/Team';
 import Translate from './Translate';
+import { IMAGE_SCRAPER_URI, TEXT_SCRAPER_URI } from '../CONSTANTS';
 
-const IMAGE_SCRAPER_URI =
-	'https://gentle-bastion-22842.herokuapp.com/https://wiki-image-scraper.herokuapp.com/api/images/';
-const TEXT_SCRAPER_URI = 'https://wiki-text-scraper.herokuapp.com/wiki/';
 interface intro_req {
 	Intro: string;
 }

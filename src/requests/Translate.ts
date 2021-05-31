@@ -1,4 +1,4 @@
-const TRANSLATION_URI = 'https://chrome-octane-313320.uc.r.appspot.com/';
+import { TRANSLATION_URI } from '../CONSTANTS';
 
 interface trans_res {
     "translated": string,

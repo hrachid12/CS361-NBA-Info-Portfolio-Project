@@ -1,5 +1,4 @@
 import PlayerListItem from './PlayerListItem';
-// import Player from '../../models/Player';
 
 import styles from './PlayerList.module.css';
 
