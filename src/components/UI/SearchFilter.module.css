@@ -6,3 +6,13 @@
 	width: 20rem;
 	max-width: 100%;
 }
+
+.search_filter_dark input {
+	font: inherit;
+	padding: 0.5rem;
+	border-radius: 6px;
+	border: 1px solid #333;
+	width: 20rem;
+	max-width: 100%;
+	background-color: #a1a1a1;
+}

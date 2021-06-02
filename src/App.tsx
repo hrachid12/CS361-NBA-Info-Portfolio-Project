@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import MainBody from './components/UI/MainBody';
 import MainHeader from './components/UI/MainHeader';
 import LoadingSpinner from './components/UI/LoadingSpinner';
 
@@ -11,6 +12,7 @@ import GenerateTeam from './requests/GenerateTeam';
 
 import LanguageContextProvider from './store/language-context';
 import PlayerContextProvider from './store/player-context';
+import ThemeContextProvider from './store/theme-context';
 
 import { NBA_TEAMS } from './CONSTANTS';
 
@@ -35,37 +37,43 @@ function App() {
 	return (
 		<PlayerContextProvider>
 			<LanguageContextProvider>
-				<MainHeader />
+				<ThemeContextProvider>
+					<MainBody>
+						<MainHeader />
 
-				<main>
-					<Suspense fallback={
-						<div className='centered'>
-							<LoadingSpinner />
-						</div>
-					}>
-						<Switch>
-							<Route path="/" exact>
-								<Home />
-							</Route>
+						<main>
+							<Suspense
+								fallback={
+									<div className="centered">
+										<LoadingSpinner />
+									</div>
+								}
+							>
+								<Switch>
+									<Route path="/" exact>
+										<Home />
+									</Route>
 
-							<Route path="/teams" exact>
-								<Teams teams={teams} />
-							</Route>
+									<Route path="/teams" exact>
+										<Teams teams={teams} />
+									</Route>
 
-							<Route path="/teams/:team_name" exact>
-								<TeamDetails />
-							</Route>
+									<Route path="/teams/:team_name" exact>
+										<TeamDetails />
+									</Route>
 
-							<Route path="/players" exact>
-								<Players teams={teams} />
-							</Route>
+									<Route path="/players" exact>
+										<Players teams={teams} />
+									</Route>
 
-							<Route path="/players/:player_name" exact>
-								<PlayerDetails />
-							</Route>
-						</Switch>
-					</Suspense>
-				</main>
+									<Route path="/players/:player_name" exact>
+										<PlayerDetails />
+									</Route>
+								</Switch>
+							</Suspense>
+						</main>
+					</MainBody>
+				</ThemeContextProvider>
 			</LanguageContextProvider>
 		</PlayerContextProvider>
 	);

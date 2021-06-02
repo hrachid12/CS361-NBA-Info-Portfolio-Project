@@ -1,5 +1,21 @@
-.card {
+.card_light {
 	background: #e7eef7;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 10px;
+}
+
+.card_dark {
+	background: #222222;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+}
+
+.card_dark p {
+	color: white !important;
+}
+
+.card_dark h1,
+.card_dark h2, 
+.card_dark h3 {
+	color: #ffba08 !important;
 }

@@ -1,4 +1,4 @@
-.red_title {
+.title_color {
     color: #042b5f;
 }
 
@@ -6,6 +6,13 @@
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     width: 20rem;
     max-width: 250px;
+}
+
+.card_bg_dark {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    width: 20rem;
+    max-width: 250px;
+    background: #a1a1a1;
 }
 
 .card_img_top {

@@ -30,3 +30,39 @@
 .stats_table tr:hover {
 	background-color: #FFBA08;
 }
+
+
+/* DARK MDOE STYLING */
+
+.stats_table_dark {
+    border: 1px solid rgb(165, 165, 165);
+	text-align: center;
+    margin: 0 auto;
+}
+
+.stats_table_dark td {
+    border: 1px solid rgb(165, 165, 165);
+    padding: 0.2rem;
+}
+
+.stats_table_dark td:hover {
+    background-color: #032b43;
+    color: #FFBA08;
+}
+
+.stats_table_dark tr:nth-child(even) {
+	background-color: #bbb;
+}
+
+.stats_table_dark tr:nth-child(odd) {
+	background-color: #ccc;
+}
+
+.stats_table_dark tr:first-child {
+	border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+.stats_table_dark tr:hover {
+	background-color: #FFBA08;
+}

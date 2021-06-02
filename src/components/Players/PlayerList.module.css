@@ -52,3 +52,53 @@
     text-decoration: none;
     color: #FFBA08;
 }
+
+/* DARK MODE STYLING */
+
+.player_list_dark {
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 15rem;
+}
+
+.player_list_dark td {
+    padding: 0.5rem;
+}
+
+.player_list_dark tr {
+    border: 1px solid black;
+}
+
+.player_list_dark tr:nth-child(even) {
+	background-color: #bbb;
+}
+
+.player_list_dark tr:nth-child(odd) {
+	background-color: #ccc;
+}
+
+.player_list_dark tr:first-child {
+	border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+.player_list_dark tr:first-child:hover {
+	background-color: #ccc;
+    color: black;
+}
+
+.player_list_dark tr:hover {
+    background-color: #032b43;
+    color: #FFBA08;
+    text-decoration: none;
+}
+
+.player_list_dark a {
+    padding: 1rem;
+    color: #032b43;
+}
+
+.player_list_dark tr:hover a {
+    text-decoration: none;
+    color: #FFBA08;
+}

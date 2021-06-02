@@ -1,17 +1,16 @@
-.header {
+.header_light {
 	width: 100%;
 	height: 4rem;
 	background-color: #032b43;
-	/* padding: 0 10%; */
 }
-.header a {
+.header_light a {
 	color: white;
 	text-decoration: none;
 }
 
-.header a:hover,
-.header a:active,
-.header a.active {
+.header_light a:hover,
+.header_light a:active,
+.header_light a.active {
 	color: #ffba08;
 	text-decoration: none;
 }
@@ -20,22 +19,52 @@
 	margin: 0 1rem;
 	margin-top: 0.5rem;
 	width: 3rem;
-	color: white;
 	text-decoration: none;
 }
 
-.dd {
+.dd_light {
 	margin-left: 1rem;
-  color: white;
 	list-style: none;
 	display: inline-block;
 }
 
-.dd a {
-  color: black;
+.dd_light a {
+	color: black;
 	text-decoration: none;
 }
 
-.dd a:hover {
-  background-color: #032b43;
+.dd_light a:hover {
+	background-color: #032b43;
+}
+
+.header_dark {
+	width: 100%;
+	height: 4rem;
+	background-color: #222222;
+}
+.header_dark a {
+	color: white;
+	text-decoration: none;
+}
+
+.header_dark a:hover,
+.header_dark a:active,
+.header_dark a.active {
+	color: #ffba08;
+	text-decoration: none;
+}
+
+.dd_dark {
+	margin-left: 1rem;
+	list-style: none;
+	display: inline-block;
+}
+
+.dd_dark a {
+	color: black;
+	text-decoration: none;
+}
+
+.dd_dark a:hover {
+	background-color: #222222;
 }

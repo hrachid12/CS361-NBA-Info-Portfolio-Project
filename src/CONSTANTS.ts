@@ -31,8 +31,6 @@ export const NBA_TEAMS = [
 	'San Antonio Spurs'
 ];
 
-// export const NBA_TEAMS = [ 'Portland TrailBlazers' ];
-
 export const HOME_MSG = {
 	english:
 		"Welcome to NBA Info! You can find descriptions and statistics on all thirty teams and all active players in the NBA! You can begin by either naviagting to the team page to get information on a team's roster and a brief history, or you can navigate to the player page where you can find an entire list of active NBA players. Then, on either page, you can click on a player's name to see their season stats.",
